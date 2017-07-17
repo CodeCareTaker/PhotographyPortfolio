@@ -1,0 +1,48 @@
+<% include ../partials/landingHeader %>
+
+ <div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <!--If the user logged in has Admin privileges-->
+            <% if (currentUser && currentUser.isAdmin == false) { %>
+                <h1>Welcome Back, <%=currentUser.username%></h1>
+                <p>View some of the photos I've taken over the years</p>
+            <% } %>
+            <!--If the user logged in is a regular user-->
+            <% if (currentUser && currentUser.isAdmin == true) { %>
+                <h1>Welcome Back, <%=currentUser.username%></h1>
+                <p>Plan to add any photos today?</p>
+                <a class="btn btn-primary btn-large" href="/photos/new">Add New Photo</a>
+            <% } %>
+            <!--If no one is logged in at all-->
+            <% if (!currentUser) { %>
+                <h1>Welcome!</h1>
+                <p>View some of the photos I've taken over the years.</p>
+            <% } %>
+                <p>
+                    <a class="btn btn-primary btn-md" href="/photos">Sort by oldest</a>
+                    <a class="btn btn-primary btn-md" href="/photosDesc">Sort by latest</a>
+                    <a class="btn btn-primary btn-md" href="/photosAlpha">Sort from A-Z</a>
+                    <a class="btn btn-primary btn-md" href="/photosAlphaBack">Sort from Z-A</a>
+                </p>
+        </div>
+    </header>
+   
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% photos.forEach(function(photo){ %>
+           <div class="col-md-3 col-sm-6">
+               <div class="thumbnail">
+                   <img src="<%= photo.image %>">
+                   <div class="caption">
+                       <h4><%= photo.title %></h4>
+                   </div>
+                   <p>
+                       <a href ="/photos/<%= photo._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+               </div>
+           </div>
+        <% }); %>
+    </div>
+ </div>
+
+<% include ../partials/footer %>

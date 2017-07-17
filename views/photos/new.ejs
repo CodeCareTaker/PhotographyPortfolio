@@ -1,0 +1,35 @@
+<% include ../partials/landingHeader %>
+
+<div class="container">
+    <div class="row">
+        <h1 class="newText">Add a New Photo</h1>
+        <div class="formContainer">
+            <form action="/photos" method="POST">
+                <div class="form-group">
+                    <p class="newText">Title: </p><input class="form-control" type="text" name="title" placeholder="title">
+                </div>
+                <div class="form-group">
+                    <p class="newText">Image: </p><input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <p class="newText">Camera: </p><input class="form-control" type="text" name="camera" placeholder="Camera Ex. Canon T6">
+                </div>
+                 <div class="form-group">
+                    <p class="newText">F-Stop: </p><input class="form-control" type="text" name="fstop" placeholder="F-Stop Ex. f/16">
+                </div>
+                 <div class="form-group">
+                    <p class="newText">Exposure: </p><input class="form-control" type="text" name="exposure" placeholder="exposure ex. 1/60sec">
+                </div>
+                 <div class="form-group">
+                    <p class="newText">ISO Speed: </p><input class="form-control" type="text" name="isospeed" placeholder="ISO Ex. ISO-160">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a href="/photos" class="newText">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

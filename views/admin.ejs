@@ -1,0 +1,16 @@
+<% include ./partials/landingHeader %>
+
+ <div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome Back, <%=currentUser.username%></h1>
+            <p>Plan to add any photos today?</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/photos/new">Add New Photo</a>
+                <a class="btn btn-primary btn-large" href="/photos">View All Photos</a>
+            </p>
+        </div>
+    </header>
+ </div>
+
+<% include ./partials/footer %>
