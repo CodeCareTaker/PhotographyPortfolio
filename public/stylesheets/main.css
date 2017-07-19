@@ -4,6 +4,7 @@ body {
 }
 .delete-form{
     display: inline;
+    margin-right: 30%;
 }
 .formContainer {
 	width: 30%; 
@@ -21,13 +22,4 @@ body {
 }
 .thumbnail .caption-full{
     padding: 9px;
-}
-.siteform {
-    width: 30%; 
-    margin: 2% 30% 30% 35%;
-}
-.siteformheader {
-    margin-top: 15%;
-    margin-left: 37%;
-    color: white;
 }

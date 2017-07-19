@@ -149,7 +149,7 @@ app.get("/photos/:id/edit", isAdmin, function(req, res){
 });
 
 //UPDATE ROUTE
-app.put("photos/:id", isAdmin, function(req, res){
+app.put("/photos/:id", isAdmin, function(req, res){
     //update photo information
     Photo.findByIdAndUpdate(req.params.id, req.body.photo, function(err, updatePhoto){
         if(err) {
@@ -262,7 +262,7 @@ app.put("/photos/:id/comments/:comment_id", checkCommentOwnership, function(req,
             res.render("back");
         } else {
             req.flash("success", "Comment successfully updated");
-            res.redirect("back");
+            res.redirect("/photos/" + req.params.id);
         }
     })
 })
@@ -274,7 +274,7 @@ app.delete("/photos/:id/comments/:comment_id", checkCommentOwnership, function(r
             res.redirect("back");
         } else {
             req.flash("error", "Comment successfully deleted");
-            res.redirect("/photos");
+            res.redirect("/photos/" + req.params.id);
         }
     });
 });
