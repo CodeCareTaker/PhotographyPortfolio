@@ -48,6 +48,10 @@ app.get("/", function(req, res){
     res.render("landing");
 });
 
+// ===================
+// PHOTO ROUTES
+// ===================
+
 //INDEX - show all photos in ascending(oldest) order. Default option
 app.get("/photos", function(req, res){
     //Get all photos from DB
@@ -174,7 +178,9 @@ app.delete("/photos/:id", isAdmin, function(req, res) {
     });
 });
 
-//Auth Routes
+// ===================
+// AUTH ROUTES
+// ===================
 
 //show sign-up form
 app.get("/register", function(req, res){
